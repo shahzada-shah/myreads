@@ -52,3 +52,5 @@ Make sure you have Node.js and npm installed on your computer. If not, you can d
     ```bash
     npm start
     ```
+
+After running the `npm start` command, your default web browser should open displaying the app. If it doesn't, navigate to `http://localhost:3000/` in your web browser.

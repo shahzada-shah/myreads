@@ -29,6 +29,26 @@ export default function Showcase() {
     ));
   };
 
+  useEffect(() => {
+    BooksAPI.getAll()
+      .then((books) => {
+        if (books.length === 0) {
+          console.log("No books fetched. Check the API or database.");
+        } else {
+          console.log('Fetched books:', books);
+          const urls = books
+            .map((book) => book.imageLinks && book.imageLinks.thumbnail)
+            .filter(Boolean);
+          setImageUrls(urls);
+        }
+      })
+      .catch((error) => {
+        console.log("An error occurred while fetching books: ", error);
+      });
+  }, []);
+  
+  
+
   return (
     <div className="bg-white">
       <main>

@@ -11,9 +11,9 @@ function classNames(...classes) {
 
 const statuses = {
   currentlyReading: "text-blue-700 bg-blue-50 ring-blue-400/20",
-  wantToRead: "text-gray-700 bg-gray-50 ring-gray-400/10",
+  wantToRead: "text-cyan-700 bg-cyan-50 ring-cryan-400/10",
   read: "text-green-700 bg-green-50 ring-green-400/20",
-  none: "text-red-700 bg-red-50 ring-red-400/20",
+  none: "text-gray-900 bg-blue-200/20 ring-blue-700/20",
 };
 
 const supportedSearchTerms = [
