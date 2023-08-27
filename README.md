@@ -32,7 +32,7 @@ Make sure you have Node.js and npm installed on your computer. If not, you can d
 1. **Clone the Repository**
 
     ```bash
-    git clone $ git clone https://github.com/shahzada-shah/myreads.git
+    git clone https://github.com/shahzada-shah/myreads.git
     ```
 
 2. **Navigate to the project folder**
