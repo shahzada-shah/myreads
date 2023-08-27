@@ -32,13 +32,13 @@ Make sure you have Node.js and npm installed on your computer. If not, you can d
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/your-username/your-repository-name.git
+    git clone $ git clone https://github.com/shahzada-shah/myreads.git
     ```
 
 2. **Navigate to the project folder**
 
     ```bash
-    cd your-repository-name
+    cd myreads
     ```
 
 3. **Install Dependencies**
