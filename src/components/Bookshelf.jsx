@@ -125,6 +125,20 @@ function Bookshelf({ books, shelfTitle, updateBookShelf }) {
                               </button>
                             )}
                           </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <button
+                                onClick={() => updateBookShelf(book, "none")} 
+                                className={`${
+                                  book.shelf === "none"
+                                    ? "bg-gray-100 text-gray-900"
+                                    : "text-gray-700"
+                                } block w-full text-left px-4 py-2 text-sm hover:bg-gray-200`}
+                              >
+                                None
+                              </button>
+                            )}
+                          </Menu.Item>
                         </div>
                       </Menu.Items>
                     </Transition>

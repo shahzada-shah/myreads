@@ -55,13 +55,13 @@ const Navbar = () => {
           <div className="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
             <Link
               className="font-medium text-white/[.8] hover:text-white sm:py-6"
-              to="/library"
+              to="/"
             >
               Library
             </Link>
             <Link
               className="font-medium text-white/[.8] hover:text-white sm:py-6"
-              to="/browse-catalog"
+              to="/search"
             >
               Browse Catalog
             </Link>

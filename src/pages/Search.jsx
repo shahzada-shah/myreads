@@ -114,15 +114,15 @@ function getDisplayShelfTitle(shelfTitle) {
 function Search() {
   const [query, setQuery] = useState("");
   const [filteredBooks, setFilteredBooks] = useState([]);
-  const { updateBookShelf } = useBooks();
+  const { bookCategories, updateBookShelf } = useBooks();
   const [allBooks, setAllBooks] = useState([]);
 
   useEffect(() => {
     const fetchInitialBooks = async () => {
       try {
-        const allBooks = await BooksAPI.getAll();
-        setAllBooks(allBooks);
-        setFilteredBooks(allBooks);
+        const fetchedBooks = await BooksAPI.getAll();
+        setAllBooks(fetchedBooks);
+        setFilteredBooks(fetchedBooks);
       } catch (error) {
         console.error("Debug: Error fetching all books:", error);
         setFilteredBooks([]);
@@ -136,24 +136,32 @@ function Search() {
       setFilteredBooks([]);
       return;
     }
-
+  
     const trimmedQuery = query.trim();
-
-    try {
-      BooksAPI.search(trimmedQuery).then((results) => {
-        if (!results.error) {
-          const filteredResults = results.filter((book) =>
+  
+    BooksAPI.search(trimmedQuery)
+      .then((searchResults) => {
+        if (!searchResults.error) {
+          
+          const syncedResults = searchResults.map((searchedBook) => {
+            const foundBook = allBooks.find(
+              (book) => book.id === searchedBook.id
+            );
+            return foundBook ? foundBook : searchedBook;
+          });
+  
+          const filteredResults = syncedResults.filter((book) =>
             book.title.toLowerCase().includes(trimmedQuery.toLowerCase())
           );
           setFilteredBooks(filteredResults);
         } else {
           setFilteredBooks([]);
         }
+      })
+      .catch((error) => {
+        console.error("Debug: Error performing search:", error);
+        setFilteredBooks([]);
       });
-    } catch (error) {
-      console.error("Debug: Error performing search:", error);
-      setFilteredBooks([]);
-    }
   }, [query, allBooks]);
 
   return (
