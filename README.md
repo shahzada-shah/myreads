@@ -4,6 +4,10 @@
 
 This application serves as a virtual bookshelf, allowing users to search for books and manage their reading lists. Users can categorize books into different shelves like "Currently Reading," "Want to Read," and "Read."
 
+For a full video walkthrough of this project, click [here](https://www.youtube.com/watch?v=z4hmfDUzar0).
+
+![Main Page](https://github.com/shahzada-shah/myreads/blob/main/demo-01.png)
+
 ## Tech Stack
 
 - **Frontend**: ReactJS
@@ -13,6 +17,8 @@ This application serves as a virtual bookshelf, allowing users to search for boo
 - **UI Components**: Headless UI
 - **API Calls**: Custom BooksAPI
 - **Icons**: React Icons
+
+![Search Page](https://github.com/shahzada-shah/myreads/blob/main/demo_02.png)
 
 ### Special Note
 While many React projects are bootstrapped with `create-react-app`, this one utilizes Vite.js for a faster and more optimized build. However, the familiar `npm start` command is still used for launching the app.
@@ -24,6 +30,8 @@ While many React projects are bootstrapped with `create-react-app`, this one uti
 3. **Dynamic Updates**: The UI updates dynamically based on the user's actions without requiring a reload.
 4. **Error Handling**: The app gracefully handles invalid queries and missing book data.
 5. **Multi-word Search**: Users can search for books using multiple words, for example, "Artificial Intelligence."
+
+![Dashboard Page](https://github.com/shahzada-shah/myreads/blob/main/demo_03.png)
 
 ## Installation & Running the App
 
